@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>indexeddbinfo</title>
+    <style>
+        body {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1{
+         text-align:center;
+         border-bottom:solid 5px red;
+         }
+        h2{
+            border-bottom:solid 3px #ff6a00;
+            border-left:solid 5px #ff6a00;
+            padding:5px;
+        }
+        div{
+            padding:10px;
+        }
+        p{
+            padding:5px;
+            font-size:1.25em;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>indexeddbinfo</h1>
+        <br>
+        <h2>Summary</h2>
+        <p>
+            The indexeddbinfo is JavaScript library which is MIT Lisence.
+            This library show indexed dabase&acute;s data like Developer Tools.
+            So, this lirary ease your debug. Especially You are debugging with IE.
+        </p>
+        <p>
+            This library correspond jQuery gt 2.1.1.And based on Indexed Database API
+            W3C Candidate Recommendation 04 July 2013
+        </p>
+        <br>
+        <h2>Usage</h2>
+        <p>
+            You should prepare jQuery Library and indexeddbinfo.
+            And, call $().indexedDbInfo("databaseName") method.
+            That&acute;s  all.
+        </p>
+    </div>
+    <script src="jquery-2.1.1.js"></script>
+    <script src="indexeddbinfo.js"></script>
+    <script>
+        //ref Indexed Database API W3C Candidate Recommendation 04 July 2013
+        //http://www.w3.org/TR/IndexedDB/
+        var idb = window.indexedDB ||
+            window.webkitIndexedDB ||
+            window.mozIndexedDB ||
+            window.msIndexedDB,
+            request,
+            db,
+            store;
+
+        if (idb) {
+            request = idb.open("books");
+            request.onupgradeneeded = function () {
+                // The database did not previously exist, so create object stores and indexes.
+                db = request.result;
+                store = db.createObjectStore("book", { keyPath: "isbn" });
+                var titleIndex = store.createIndex("by_title", "title", { unique: true });
+                var authorIndex = store.createIndex("by_author", "author");
+
+                // Populate with initial data.
+                store.put({ title: "Quarry Memories", author: "Fred", isbn: 123456 });
+                store.put({ title: "Water Buffaloes", author: "Fred", isbn: 234567 });
+                store.put({ title: "Bedrock Nights", author: "Barney", isbn: 345678 });
+            };
+        }
+        if (idb) {
+            request = idb.open("books");
+            request.onupgradeneeded = function () {
+                // The database did not previously exist, so create object stores and indexes.
+                db = request.result;
+                store = db.createObjectStore("book", { keyPath: "isbn" });
+                var titleIndex = store.createIndex("by_title", "title", { unique: true });
+                var authorIndex = store.createIndex("by_author", "author");
+
+                // Populate with initial data.
+                store.put({ title: "Quarry Memories", author: "Fred", isbn: 123456 });
+                store.put({ title: "Water Buffaloes", author: "Fred", isbn: 234567 });
+                store.put({ title: "Bedrock Nights", author: "Barney", isbn: 345678 });
+            };
+        }
+    </script>
+    <script>$().indexedDbInfo("books");</script>
+</body>
+</html>
