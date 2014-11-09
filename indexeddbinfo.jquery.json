@@ -1,0 +1,17 @@
+﻿{
+    "name": "indexeddbinfo",
+    "title": "indexeddbinfo",
+    "version": "0.7.0",
+    "author": {
+        "name": "Yuichi Nukiyama"
+    },
+    "dependencies": {
+        "jquery": ">=2.1.1"
+    },
+    "licenses": [{"url": "http://opensource.org/licenses/mit-license.php"}],
+    "files": ["Scrpt/indexeddbinfo.js"],
+    "description": "indexeddbinfo show indexed dabase's data like Developer Tools.",
+    "keywords": ["indexeddbinfo","IndexedDatabase","IndexedDB","debug"],
+    "homepage": "https://github.com/YuichiNukiyama/indexeddbinfo"
+}
+
