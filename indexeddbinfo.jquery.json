@@ -12,7 +12,7 @@
         "type": "git",
         "url": "https://github.com/YuichiNukiyama/indexeddbinfo"
     },
-    "licenses": [ { "url": "http://opensource.org/licenses/mit-license.php" } ],
+    "licenses": [ {"type": "MIT",  "url": "http://opensource.org/licenses/mit-license.php" } ],
     "files": [ "Scrpt/indexeddbinfo.js" ],
     "description": "indexeddbinfo show indexed dabase's data like Developer Tools.",
     "keywords": [ "indexeddbinfo", "IndexedDatabase", "IndexedDB", "debug", "jquery-plugin" ],
