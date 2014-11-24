@@ -258,9 +258,15 @@ $.fn.indexedDbInfo = function( dbName ){
 	                        if (cursor) {
 	                            var data = cursor.value;
 	                            var str = "";
+	                            var d = "";
 	                            for (var val in data) {
 	                                str += val + ":";
-	                                str += data[val] + " ";
+	                                if (data[val] instanceof Object) {
+	                                    d = JSON.stringify(data[val])
+	                                    str += d + " ";
+	                                }else{
+	                                    str += data[val] + " ";
+	                                }
 	                            }
 	                            //show data
 	                            tr = $("<tr>");
@@ -273,7 +279,7 @@ $.fn.indexedDbInfo = function( dbName ){
 	                            //apend to container
 	                            div.append(table);
 	                            containerDiv.append(div);
-	                            if (i < storeLength) {
+	                            if (i < storeLength -1) {
 	                                i += 1;
 	                                showDetails(i);
 	                            }

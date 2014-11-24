@@ -1,0 +1,15 @@
+{
+  "name": "indexeddbinfo",
+  "version": "0.7.4",
+  "homepage": "https://github.com/YuichiNukiyama/indexeddbinfo",
+  "authors": [
+    "YuichiNukiyama <oscar.wilde84@hotmail.co.jp>"
+  ],
+  "description": "This Library show content of IndexedDB",
+  "keywords": [
+    "indexedDB",
+    "jquery-plugin",
+    "IndexedDatabase"
+  ],
+  "license": "MIT"
+}
